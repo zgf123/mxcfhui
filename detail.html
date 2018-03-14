@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telphone=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<title>标题</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery2.1.4.min.js"></script>
+        <!-- xinzeng -->
+        <script src="js/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://apps.bdimg.com/libs/layer/2.1/layer.js"></script>
+	</head>
+	<body style="background-color:#f4f4f4;">
+		<div class="detail_container">
+            <div class="head flex_align">
+                <div class="left flex_1">
+                    <p>预期收益</p>
+                    <h1>股权投资</h1>
+                </div>
+                <div class="left flex_1">
+                    <p>基金期限</p>
+                    <h1>3+2年</h1>
+                </div>
+                <div class="left flex_1">
+                    <p>基金规模</p>
+                    <h1>5000万</h1>
+                </div>
+            </div>
+
+            <div class="resume">
+                <div class="title">基金概要</div>
+                <div class="con">
+                    <table>
+                        <tr>
+                            <td>基金组织形式</td>
+                            <td>契约型基金</td>
+                        </tr>
+                        <tr>
+                            <td>基金管理人</td>
+                            <td>深圳市富海民享财富管理有限公司</td>
+                        </tr>
+                        <tr>
+                            <td>基金投向</td>
+                            <td>投资于物明医疗并购专项基金</td>
+                        </tr>
+                        <tr>
+                            <td>管理费</td>
+                            <td>2%/年，收取5年</td>
+                        </tr>
+                        <tr>
+                            <td>认购费</td>
+                            <td>1%（价内收取）</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="resume">
+                <div class="title">基金亮点</div>
+                <div class="con">
+                    <div class="text">
+                        一、高增长行业：<br>
+                        医药行业是并购基金的最佳选择。<br>
+                        二、联合上市公司：<br>
+                        退出路径明确。<br>
+                        三、国有银行配资：<br>
+                        风格严格，收益放大。<br>
+                        四、投资机会：<br>
+                        最低的前后端费用，彰显GP信心。<br>
+                        五、3-5年周期：<br>
+                        最短股权投资周期。<br>
+                        六、契约型基金：更严的监管，更优的税率。
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume">
+                <div class="title">详细资料</div>
+                <div class="con">
+                    <div class="instruct flex_align">
+                        <div class="left flex_1">产品募集说明书</div>
+                        <div class="right"><a href="javascript:;">查看</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pingjia">
+                <div class="pre_load"></div>
+                <div class="title">您对该产品的兴趣程度？</div>
+                <div class="starbox cr">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="btn" onclick="submit()">评价</div>
+                <p class="hide">感谢您的评价，我们会更加努力！</p>
+            </div>
+		</div>
+        <div class="guwen_box">
+            <div class="guwen flex_align">
+                <!-- <div class="imgbox"><img src="images/head_pic.png" alt=""></div> -->
+                <div class="imgbox"><img src="http://tva2.sinaimg.cn/crop.0.0.664.664.180/0060r5dTjw8f6vqkjxczcj30ig0iggmw.jpg" alt=""></div>
+                <div class="name flex_1">理财顾问 张三三</div>
+                <div class="tel"><a href="javascript:;" class="copyBtn" data-clipboard-text="wx123456789">复制微信</a></div>
+                <div class="tel"><a href="tel:15866666666">拨打电话</a></div>
+            </div>
+        </div>
+        
+        <!-- 新增弹窗 -->
+        <div class="page_auth_fix">
+            <div class="content">
+                <div class="auth_text">
+                    <p class="text">
+                        本投资人郑重承诺如下：<br>一、本投资人严格按照《私募投资基金募集行为管理办法》、《中华人民共和国合伙企业法》等相关法律法规的规定办理相关手续，提交材料真实、准确、完 整，不存在虚假陈述或重大遗漏。<br>
+                        二、本投资人符合以下其中一种情形：<br>
+                        1、金融资产不低于人民币300万元或者最近三年个人年均收入不低于50万元的个人。<br>
+                        2、净资产不低于人民币1000万元的单位。<br>三、本投资人的投资资金来源合法，没有非法汇集他人资金投资。 <br>
+                        四、本投资人承诺成为合格投资人后，将严格遵守《中华人民共和国合伙企业法》等有关法律法规和规章制度的规定进行投资活动，并接受监管。<br> 
+                        五、本投资人承诺成为合格投资人后，对交易涉及的事项保密，并依法缴纳投资活动所产生的各项税费。 <br>
+                        六、本投资人在参与投资过程中，如果因存在欺诈、隐瞒或其他不符合实际情况的陈述所产生的一切责任，由本投资人自行承担。
+                    </p>
+                </div>
+                <div class="auth_box">
+                    <div class="auth_notice"><span class="on"></span>本投资人若违反上述承诺，愿承担相关责任</div>
+                    <div class="auth_btn"><span class="on">我是合格投资人</span></div>
+                </div>
+            </div>
+        </div>
+		<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+            //评价
+            var level,
+                span = $('.starbox span');
+            function submit(){
+                var isTrue = span.hasClass('on');
+                if(!isTrue){
+                    layer.msg('请先进行评价');
+                    return false;
+                }
+                layer.msg('评价成功');//提交level
+                $('.pingjia .btn').hide();
+                $('.pingjia p').show();
+                span.off('click');
+            }
+            span.click(function(){
+                span.removeClass('on');
+                level = $(this).index()+1;
+                for (var i=0; i < level; i++) {
+                    span.eq(i).addClass('on');
+                }
+            })
+
+			//复制微信号
+            var clipboard = new Clipboard('.copyBtn');
+
+            clipboard.on('success', function(e) {
+                layer.msg('复制微信号成功');
+            });
+
+            clipboard.on('error', function(e) {
+                layer.msg('复制微信号失败');
+            });
+
+            //认证投资人
+            $('.auth_notice span').click(function(){
+                $(this).toggleClass('on');
+                $('.auth_btn span').toggleClass('on');
+            });
+
+            $('.auth_btn').click(function(){
+                var isTrue = $('.auth_btn span').hasClass('on');
+                if(isTrue){
+                    $('.page_auth_fix').hide();
+                }else{
+                    layer.msg('请您阅读并接受此认定书');
+                }
+            })
+		</script>
+	</body>
+</html>

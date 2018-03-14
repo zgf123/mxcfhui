@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telphone=no" />
+		<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+		<title>标题</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery2.1.4.min.js"></script>
+        <!-- xinzeng -->
+        <script src="js/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://apps.bdimg.com/libs/layer/2.1/layer.js"></script>
+	</head>
+	<body style="background-color:#fff;">
+		<div class="page_auth">
+            <p class="text">
+                本投资人郑重承诺如下：<br>一、本投资人严格按照《私募投资基金募集行为管理办法》、《中华人民共和国合伙企业法》等相关法律法规的规定办理相关手续，提交材料真实、准确、完 整，不存在虚假陈述或重大遗漏。<br>
+                二、本投资人符合以下其中一种情形：<br>
+                1、金融资产不低于人民币300万元或者最近三年个人年均收入不低于50万元的个人。<br>
+                2、净资产不低于人民币1000万元的单位。<br>三、本投资人的投资资金来源合法，没有非法汇集他人资金投资。 <br>
+                四、本投资人承诺成为合格投资人后，将严格遵守《中华人民共和国合伙企业法》等有关法律法规和规章制度的规定进行投资活动，并接受监管。<br> 
+                五、本投资人承诺成为合格投资人后，对交易涉及的事项保密，并依法缴纳投资活动所产生的各项税费。 <br>
+                六、本投资人在参与投资过程中，如果因存在欺诈、隐瞒或其他不符合实际情况的陈述所产生的一切责任，由本投资人自行承担。
+            </p>
+            <div class="notice"><span class="on"></span>本投资人若违反上述承诺，愿承担相关责任</div>
+            <div class="btn"><span class="on">我是合格投资人</span></div>
+        </div>
+		<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+
+            $('.notice span').click(function(){
+                $(this).toggleClass('on');
+                $('.btn span').toggleClass('on');
+            });
+
+            $('.btn').click(function(){
+                var isTrue = $('.btn span').hasClass('on');
+                if(isTrue){
+                    layer.msg('认证通过，跳转');
+                }else{
+                    layer.msg('请您阅读并接受此认定书');
+                }
+            })
+		</script>
+	</body>
+</html>
