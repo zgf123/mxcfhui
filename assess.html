@@ -12,11 +12,53 @@
 	</head>
 	<body>
 		<div class="assess_page">
-            
+            <div class="explain">请认真完成下列题目，请确保您所提供的答案是客观、真实、准确、有效的！</div>
+            <div class="myslider">
+            	<form class="slider_box cr">
+            		<div class="slider">
+            			<h1><span>1</span> / 您的年龄介于：</h1>
+        				<ul>
+        					<li>1</li>
+	        				<li>2</li>
+	        				<li>3</li>
+        				</ul>
+            		</div>
+            		<div class="slider">
+            			<h1><span>2</span> / 兄dei，不要说那些没用的：</h1>
+        				<ul>
+        					<li>1</li>
+	        				<li>2</li>
+	        				<li>3</li>
+        				</ul>
+            		</div>
+            		<div class="slider">
+            			<h1><span>3</span> / 在您每年的家庭可支配收入中，可用于金融投资（储蓄存款除外）的比例为：</h1>
+        				<ul>
+        					<li>1</li>
+	        				<li>2</li>
+	        				<li>3</li>
+        				</ul>
+            		</div>
+            	</form>
+            </div>
         </div>
 		<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-			//code...
+			var index,
+				max = $('.slider').length-1;
+			$('li').click(function(){
+				index = $(this).parents('.slider').index();
+				if(index < max){
+					slide(index);
+				}else{
+					console.log('题答完了，开始测评');
+				}
+			});
+
+			//滑动效果
+			function slide(index){
+				$('.slider_box').css('-webkit-transform','translate3d(-'+10*(index+1)+'rem,0,0)');
+			}
 		</script>
 	</body>
 </html>
