@@ -14,51 +14,206 @@
 		<div class="assess_page">
             <div class="explain">请认真完成下列题目，请确保您所提供的答案是客观、真实、准确、有效的！</div>
             <div class="myslider">
-            	<form class="slider_box cr">
-            		<div class="slider">
-            			<h1><span>1</span> / 您的年龄介于：</h1>
-        				<ul>
-        					<li>1</li>
-	        				<li>2</li>
-	        				<li>3</li>
-        				</ul>
-            		</div>
-            		<div class="slider">
-            			<h1><span>2</span> / 兄dei，不要说那些没用的：</h1>
-        				<ul>
-        					<li>1</li>
-	        				<li>2</li>
-	        				<li>3</li>
-        				</ul>
-            		</div>
-            		<div class="slider">
-            			<h1><span>3</span> / 在您每年的家庭可支配收入中，可用于金融投资（储蓄存款除外）的比例为：</h1>
-        				<ul>
-        					<li>1</li>
-	        				<li>2</li>
-	        				<li>3</li>
-        				</ul>
-            		</div>
-            	</form>
+            	<div class="slider_box cr"></div>
             </div>
+            <div class="back_issue hide">返回上一题</div>
         </div>
 		<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			//页面渲染
+			var data = [
+				{
+					id:1, 
+					title:'您的年龄介于：', 
+					opts:[
+						{opt:'高于65岁', score: 1},
+						{opt:'51-65岁', score: 3},
+						{opt:'31-50岁', score: 7},
+						{opt:'18-30岁', score: 5}
+					]
+				},
+				{
+					id:2, 
+					title:'您的学历为：', 
+					opts:[
+						{opt:'高中以下', score: 1},
+						{opt:'中专或大专', score: 2},
+						{opt:'本科', score: 3},
+						{opt:'硕士及以上', score: 4}
+					]
+				},
+				{
+					id:3, 
+					title:'您的职业为：', 
+					opts:[
+						{opt:'私营老板或者个体工商户老板', score: 5},
+						{opt:'金融行业一般从业人员', score: 4},
+						{opt:'一般企事业单位员工', score: 3},
+						{opt:'专业技术人员', score: 2},
+						{opt:'无固定职业', score: 1},
+					]
+				},
+				{
+					id:4, 
+					title:'您的家庭可支配年收入为人民币：', 
+					opts:[
+						{opt:'50万元以下', score: 1},
+						{opt:'50-100万元', score: 3},
+						{opt:'100-500万元', score: 5},
+						{opt:'500万元以上', score: 7},
+						{opt:'1000万元以上', score: 9},
+					]
+				},
+				{
+					id:5, 
+					title:'在您每年的家庭可支配收入中，可用于金 融投资（储蓄存款除外）的比例为：', 
+					opts:[
+						{opt:'小于10%', score: 1},
+						{opt:'10%至25%', score: 3},
+						{opt:'25%至50%', score: 5},
+						{opt:'大于50%', score: 7},
+					]
+				},
+				{
+					id:6, 
+					title:'您的投资知识可描述为：', 
+					opts:[
+						{opt:'无：从没有金融产品方面的知识', score: 1},
+						{opt:'有限：基本没有金融产品方面的知识', score: 3},
+						{opt:'一般：对金融产品及其相关风险具有基本的知识和理解', score: 4},
+						{opt:'丰富：对金融产品及其相关风险具有丰富的知识和理解', score: 6},
+					]
+				},
+				{
+					id:7, 
+					title:'您的投资经验可描述为：', 
+					opts:[
+						{opt:'除银行储蓄外，基本没有其他投资经验', score: 1},
+						{opt:'购买过债券、保险等理财产品', score: 3},
+						{opt:'参与过股票、基金等产品的交易', score: 5},
+						{opt:'参与过权证、期货、期权等产品的交易', score: 6},
+					]
+				},
+				{
+					id:8, 
+					title:'您有多少年投资基金、股票、信托、私 募证券或金融衍生产品等风险投资品的 经验：', 
+					opts:[
+						{opt:'没有经验', score: 1},
+						{opt:'少于2年', score: 2},
+						{opt:'2至5年', score: 3},
+						{opt:'5年至10年', score: 5},
+						{opt:'10年以上', score: 7},
+					]
+				},
+				{
+					id:9, 
+					title:'您计划的投资期限是：', 
+					opts:[
+						{opt:'1年以下', score: 1},
+						{opt:'1至3年', score: 2},
+						{opt:'3至5年', score: 4},
+						{opt:'5年以上', score: 6},
+					]
+				},
+				{
+					id:10, 
+					title:'您的投资目的是：', 
+					opts:[
+						{opt:'资产迅速增长', score: 5},
+						{opt:'资产稳健增长', score: 3},
+						{opt:'资产保值', score: 1},
+					]
+				},
+				{
+					id:11, 
+					title:'以下哪项描述最符合您的投资态度：', 
+					opts:[
+						{opt:'厌恶风险，不希望本金损失，希望获得稳 定回报', score: 1},
+						{opt:'保守投资，不希望本金损失，愿意承担一 定幅度的收益波动', score: 2},
+						{opt:'寻求资金的较高收益和成长性，愿意为此 承担有限本金损失', score: 3},
+						{opt:'希望赚取高回报，愿意为此承担较大本金 损失', score: 4},
+					]
+				},
+				{
+					id:12, 
+					title:'假设有两种投资：投资A预期获得10%的收益，可能承担的损失非常小；投资B预期获得30%的收益，但可能承担较大亏损。您会怎么支配您的投资：', 
+					opts:[
+						{opt:'全部投资于收益较小且风险较小的A', score: 1},
+						{opt:'同时投资于A和B，但大部分资金投资于收 益较小且风险较小的A', score: 2},
+						{opt:'同时投资于A和B，但大部分资金投资于收 益较大且风险较大的B', score: 3},
+						{opt:'全部投资于收益较大且风险较大的B ', score: 4},
+					]
+				},
+				{
+					id:13, 
+					title:'您认为自己能承受的最大投资损失是：', 
+					opts:[
+						{opt:'10%以内', score: 1},
+						{opt:'10%-30%', score: 2},
+						{opt:'30%-50%', score: 4},
+						{opt:'超过50%', score: 5},
+					]
+				},
+			]
+
+			$('.slider_box').width(data.length * 10 + 'rem');
+			var html = '';
+			$.each(data,function(i,c){
+				html += '<div class="slider">\
+	            			<h1><span>'+ c.id +'</span> / '+ c.title +'</h1>\
+	        				<ul>\
+	        					'+function(){
+	        						var ulHtml = '';
+	        						$.each(c.opts, function(index, con){
+	        							ulHtml += '<li class="flex_align">\
+						        						<div class="sign"></div>\
+						        						<div class="option">'+ con.opt +'</div>\
+														<div class="score flex_1"><span>'+ con.score +'</span>分</div>\
+						        					</li>';
+	        						});
+	        						return ulHtml;
+	        					}()+'\
+	        				</ul>\
+	            		</div>';
+            	$('.slider_box').html(html);
+			});
+
+			//dom操作
 			var index,
 				max = $('.slider').length-1;
-			$('li').click(function(){
-				index = $(this).parents('.slider').index();
-				if(index < max){
+			var score = 0;
+			$('.slider li').click(function(){
+				$(this).addClass('on').siblings().removeClass('on');
+				index = $(this).parents('.slider').index()+1;
+				if(index>0){
+					$('.back_issue').show();
+				}
+				if(index <= max){
 					slide(index);
 				}else{
-					console.log('题答完了，开始测评');
+					$('.slider li').off('click');
+					$('.back_issue').hide();
+					$('li.on .score span').each(function(i,c){
+						score += Number($(this).text());
+					});
+					console.log(score);
+				}
+			});
+
+			//返回上一题
+			$('.back_issue').click(function(){
+				index--;
+				slide(index);
+				if(index == 0){
+					$('.back_issue').hide();
 				}
 			});
 
 			//滑动效果
 			function slide(index){
-				$('.slider_box').css('-webkit-transform','translate3d(-'+10*(index+1)+'rem,0,0)');
+				$('.slider_box').css('-webkit-transform','translate3d(-'+10*index+'rem,0,0)');
 			}
+
 		</script>
 	</body>
 </html>
