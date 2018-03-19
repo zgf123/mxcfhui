@@ -889,14 +889,124 @@ html,body{
 		}
 	}
 	.back_issue{
-		width: ;
-		background-color: #f8c89a;
+		position: fixed;
+		line-height: 80/@r;
 		color: #fff;
-		width: 200/@r;
-		line-height: 60/@r;
-		margin: 60/@r auto auto;
 		text-align: center;
-		// border-radius: 8/@r;
+		font-size: 34/@r;
+		left: 55/@r;
+		right: 55/@r;
+		bottom: 50/@r;
+		border-radius: 40/@r;
+		background: -webkit-linear-gradient(180deg, #EBBD80 0%, #BD8F55 100%);
+	}
+	.res_title{
+		font-size: 36/@r;
+		color: #666;
+		margin-top: 36/@r;
+		margin-left: 30/@r;
+	}
+	.res_type{
+		height: 490/@r;
+		width: 100%;
+		background: url(../images/paopao.png) center center no-repeat;
+		background-size: 440/@r 440/@r;
+		text-align: center;
+		margin-top: 20/@r;
+		span{
+			font-size: 66/@r;
+			color: #bd6b00;
+			line-height: 490/@r;
+		}
+	}
+	.res_time{
+		font-size: 32/@r;
+		color: #999;
+		text-align: center;
+		margin-top: 20/@r;
+	}
+	.res_tip{
+		color: #999;
 		font-size: 28/@r;
+		padding: 0 30/@r;
+		margin-top: 114/@r;
+		line-height: 1.6;
+		i{
+			display: inline-block;
+			width: 31/@r;
+			height: 31/@r;
+			background: url(../images/warn.png) center center no-repeat;
+			background-size: 100% 100%;
+			vertical-align: middle;
+			margin-top: -8/@r;
+			margin-right: 6/@r;
+		}
+	}
+	.res_btn{
+		line-height: 80/@r;
+		color: #fff;
+		text-align: center;
+		font-size: 34/@r;
+		width: 640/@r;
+		margin: 128/@r auto auto;
+		border-radius: 40/@r;
+		background: -webkit-linear-gradient(180deg, #EBBD80 0%, #BD8F55 100%);
+	}
+}
+.auth_page{
+	position: fixed;
+	left: 0;
+	top:0;
+	bottom:0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+	.container{
+		width: 640/@r;
+		height: 650/@r;
+		background-color: #fff;
+		border-radius: 10/@r;
+		position: absolute;
+		top:50%;
+		left: 50%;
+		margin-top: -325/@r;
+		margin-left: -320/@r;
+		.title{
+			font-size: 38/@r;
+			color: #333;
+			line-height: 110/@r;
+			text-align: center;
+		}
+		.form{
+			padding:0 50/@r 50/@r;
+			.row{
+				margin-top: 10/@r;
+				.label{
+					font-size: 34/@r;
+					line-height: 96/@r;
+					color: #666;
+				}
+				input{
+					width: 100%;
+					background-color: transparent;
+					height: 80/@r;
+					border: 1px solid #dfdfdf;
+					padding: 10px;
+					color: #666;
+					font-size: 34/@r;
+				}
+			}
+			.btn{
+				margin-top: 50/@r;
+				button{
+					width: 100%;
+					line-height: 80/@r;
+					color: #fff;
+					text-align: center;
+					font-size: 34/@r;
+					border-radius: 40/@r;
+					background: -webkit-linear-gradient(180deg, #EBBD80 0%, #BD8F55 100%);
+				}
+			}
+		}
 	}
 }

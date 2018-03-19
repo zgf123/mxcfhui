@@ -18,8 +18,32 @@
             </div>
             <div class="back_issue hide">返回上一题</div>
         </div>
+        <div class="auth_page">
+        	<div class="container">
+        		<div class="title bor_b">请先进行实名认证</div>
+				<div class="form">
+					<form>
+						<div class="row">
+							<div class="label">您的姓名：</div>
+							<div class="ipt"><input type="text"></div>
+						</div>
+						<div class="row">
+							<div class="label">身份证号：</div>
+							<div class="ipt"><input type="tel"></div>
+						</div>
+						<div class="btn"><button type="submit">立即认证</button></div>
+					</form>
+				</div>
+        	</div>
+        </div>
 		<script src="js/pub.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			//隐藏实名认证
+			$('.auth_page .btn button').click(function(){
+				$('.auth_page').hide();
+				return false;
+			});
+
 			//页面渲染
 			var data = [
 				{
